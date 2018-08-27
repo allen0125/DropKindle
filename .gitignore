@@ -5,7 +5,7 @@ __pycache__/
 setting.py
 # C extensions
 *.so
-
+download_buffer/
 # Distribution / packaging
 .Python
 build/

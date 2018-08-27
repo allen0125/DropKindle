@@ -26,7 +26,7 @@ from sqlalchemy import Column, String, create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.types import Integer, Boolean
-from sent_with_book import sent_mail
+from sent_with_book import sent_mail, sent_mail_test
 import time
 
 engine = create_engine('mysql+pymysql://root@localhost:3306/dropkindle')
@@ -44,7 +44,7 @@ class Book(Base):
 
 
 while True:
-    time.sleep(120)
+    time.sleep(10)
     dbx = dropbox.Dropbox(ST.GEN_ACCESS_TOKEN)
     res = dbx.files_list_folder('', recursive=True)
     buffer_list = []
@@ -64,6 +64,6 @@ while True:
                                 is_sent=True)
                 session.add(new_book)
                 dbx.files_download_to_file('download_buffer/%s' % doc_file.name, doc_file.path_lower)
-                sent_mail(doc_file.name, 'download_buffer/%s' % doc_file.name)
+                sent_mail_test(doc_file.name, 'download_buffer/%s' % doc_file.name, ST.TO_ADDR)
     session.commit()
     session.close()
