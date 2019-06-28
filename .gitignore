@@ -15,6 +15,7 @@ downloads/
 eggs/
 .eggs/
 lib/
+dk_env/
 lib64/
 parts/
 sdist/
@@ -102,3 +103,5 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+.vscode/
+dk_local.env
