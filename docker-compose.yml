@@ -1,4 +1,4 @@
-version: "3"
+version: "2"
 services:
 
   web:
@@ -7,6 +7,6 @@ services:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - ./db:/code/db
+      - ./db/:/code/db/
     ports:
       - "8000:8000"
