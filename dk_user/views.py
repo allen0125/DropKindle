@@ -7,10 +7,10 @@ from django.http import HttpResponse
 
 def dk_index(request):
     if request.method == 'GET':
-        if not request.user.is_authenticated:
-            return redirect("/login/")
-        else:
-            return render(request,'login/index.html')
+        # if not request.user.is_authenticated:
+        #     return redirect("/login/")
+        # else:
+        return render(request,'login/index.html')
     if request.method == 'POST':
         pass
 
@@ -25,7 +25,7 @@ def dk_login(request):
             user=auth.authenticate(username=_username,password=_password)
             if user:
                 auth.login(request,user)
-                return redirect("/index/")
+                return redirect("/")
             else:
                 return HttpResponse("用户名或密码错误")
 
@@ -48,4 +48,4 @@ def dk_register(request):
 
 def dk_logout(request):
     auth.logout(request)
-    return redirect("/index/")
+    return redirect("/")
