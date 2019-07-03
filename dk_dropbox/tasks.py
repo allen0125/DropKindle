@@ -5,10 +5,6 @@ from dk_dropbox.utils import get_dropbox_file_list, get_tokens, sent_mail
 from dk_dropbox.models import UserDropboxHistory
 
 
-def print_hello():
-    print("Hello : " + str(datetime.datetime.now()))
-
-
 def push_doc():
     active_users = get_tokens()
     for dk_user in active_users:
