@@ -19,6 +19,6 @@ def push_doc():
             file_path = os.environ.get('DOWNLOAD_DIR') + doc_file.name
             dbx.files_download_to_file(file_path, doc_file.path_lower)
             sent_mail(doc_file.name, file_path, dk_user.email)
-            new_history = UserDropboxHistory(dk_user=dk_user, dp_file_value=doc_file.content_hash,
-                                             push_status=True)
+            new_history = UserDropboxHistory(dk_user=dk_user, dp_file_name=doc_file.name,
+                                             dp_file_value=doc_file.content_hash, push_status=True)
             os.remove(file_path)
