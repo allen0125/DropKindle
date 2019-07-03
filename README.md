@@ -19,7 +19,6 @@ DropKindle 将 Dropbox 、坚果云、OneDrive中的文档推送到 Kindle
 - doc
 - docx
 - pdf
-ccccccgbbifrnnjblvvukfecjcikcvblgheutngfcvlt
 
 文件大小限制: 20MB
 
