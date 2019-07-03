@@ -1,4 +1,5 @@
 # DropKindle
-Push the documentation which new put on Dropbox or NutStore to your kindle
 
-## Guide
+DropKindle 将 Dropbox /坚果云中的文档推送到 Kindle
+
+## 依赖工具
