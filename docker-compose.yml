@@ -7,6 +7,6 @@ services:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - ./db/:/code/db/
+      - /root/db/:/code/db/
     ports:
-      - "8000:8000"
+      - "10100:8000"
