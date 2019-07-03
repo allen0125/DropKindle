@@ -14,7 +14,7 @@ from email import encoders
 
 DROPBOX_KEY = os.environ.get("DROPBOX_KEY")
 DROPBOX_SECRET = os.environ.get("DROPBOX_SECRET")
-REDIRECT_URL = os.environ.get("REDIRECT_URL")
+DP_REDIRECT_URL = os.environ.get("DP_REDIRECT_URL")
 
 FILE_EXTENSION = ['mobi', 'azw', 'txt', 'doc', 'docx', 'pdf']
 
@@ -49,7 +49,7 @@ def get_dropbox_auth_flow(web_app_session):
     """
     DropboxOAuth2Flow(DROPBOX_KEY,
                       DROPBOX_SECRET,
-                      REDIRECT_URL)
+                      DP_REDIRECT_URL)
 
 
 def get_dropbox_file_list(dk_user):

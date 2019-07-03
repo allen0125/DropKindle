@@ -15,8 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url
+from dk_user import views as user_views
+from dk_dropbox import views as dropbox_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^index/', user_views.dk_index),
+    url(r'^login/', user_views.dk_login),
+    url(r'^register/', user_views.dk_register),
+    url(r'^logout/', user_views.dk_logout),
+    url(r'^start-oauth2/', dropbox_views.dropbox_auth_start),
+    url(r'^oauth2/', dropbox_views.dropbox_auth_finish),
 ]
 
