@@ -27,5 +27,6 @@ urlpatterns = [
     url(r'^logout/', user_views.dk_logout),
     url(r'^start-oauth2/', dropbox_views.dropbox_auth_start),
     url(r'^oauth2/', dropbox_views.dropbox_auth_finish),
+    url(r'^push/', dropbox_views.drop_kindle),
 ]
 
