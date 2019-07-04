@@ -21,7 +21,7 @@ from dk_dropbox import views as dropbox_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^', user_views.dk_index),
+    path('', user_views.dk_index),
     url(r'^login/', user_views.dk_login),
     url(r'^register/', user_views.dk_register),
     url(r'^logout/', user_views.dk_logout),

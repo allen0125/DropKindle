@@ -7,10 +7,10 @@ from django.http import HttpResponse
 
 def dk_index(request):
     if request.method == 'GET':
-        # if not request.user.is_authenticated:
-        #     return redirect("/login/")
-        # else:
-        return render(request,'login/index.html')
+        if request.user.is_authenticated:
+            return render(request,'login/index.html')
+        else:
+            return redirect("/login/")
     if request.method == 'POST':
         pass
 
