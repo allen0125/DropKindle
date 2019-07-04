@@ -49,6 +49,7 @@ def drop_kindle(request):
                 sent_mail(doc_file.name, file_path, dk_user.email)
                 new_history = UserDropboxHistory(dk_user=dk_user, dp_file_name=doc_file.name,
                                                 dp_file_value=doc_file.content_hash, push_status=True)
+                new_history.save()
                 os.remove(file_path)
             return HttpResponse("推送成功！")
         else:
