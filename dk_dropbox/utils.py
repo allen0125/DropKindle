@@ -60,7 +60,7 @@ def get_dropbox_file_list(dk_user):
     dbx_file_list = []
     dbx = dropbox.Dropbox(dk_user.dropbox_token)
     res = dbx.files_list_folder('', recursive=True)
-    _pushed_list = UserDropboxHistory.objects.filter(dk_user=dk_user).values_list('dp_file_value')
+    _pushed_list = UserDropboxHistory.objects.filter(dk_user=dk_user).values_list('dp_file_value',flat=True)
 
     for dbx_file in res.entries:
         if isinstance(dbx_file, dropbox.files.FileMetadata):
