@@ -5,7 +5,7 @@ import os
 from django.http import HttpResponse
 from dk_user.models import DKUser
 from dk_dropbox.utils import get_dropbox_file_list, get_tokens, sent_mail
-
+from dk_dropbox.models import UserDropboxHistory
 # Create your views here.
 APP_KEY = os.environ.get('DROPBOX_KEY')
 APP_SECRET = os.environ.get('DROPBOX_SECRET')
