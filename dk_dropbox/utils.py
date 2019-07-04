@@ -36,7 +36,7 @@ def sent_mail(filename, filesrc, toaddr):
     att.add_header('Content-Disposition', 'attachment', filename=('gbk', '', filename))
     msg.attach(att)
     smtp = smtplib.SMTP_SSL(os.environ.get('SMTP_SSL'))
-    smtp.set_debuglevel(1)
+    smtp.set_debuglevel(False)
     smtp.login(fromaddr, os.environ.get('MAIL_PASSWD'))
     smtp.sendmail(msg['From'], msg['To'], msg.as_string())
     smtp.quit()
