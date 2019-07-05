@@ -54,3 +54,4 @@ def drop_kindle(request):
             return HttpResponse("推送成功！")
         else:
             return HttpResponse("请先获得Dropbox授权")
+    return redirect('/login/')
